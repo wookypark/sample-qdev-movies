@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} ?: 'Error - Arrr!'">Error - Arrr!</title>
+    <link rel="stylesheet" th:href="@{/css/movies.css}">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #dc3545;
+        }
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .error-title {
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            color: #6c757d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-btn:hover {
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-container">
+            <div class="error-icon">🏴‍☠️</div>
+            <h1 class="error-title" th:text="${title} ?: 'Arrr! Something went wrong!'">Arrr! Something went wrong!</h1>
+            <p class="error-message" th:text="${message} ?: 'Shiver me timbers! The ship has encountered rough seas!'">
+                Shiver me timbers! The ship has encountered rough seas!
+            </p>
+            <a href="/movies" class="back-btn">⚓ Back to Treasure Chest</a>
+        </div>
+    </div>
+</body>
+</html>
